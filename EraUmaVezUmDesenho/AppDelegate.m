@@ -34,7 +34,7 @@
     }
     
     //Delay para mostrar a launchscreen.
-    [NSThread sleepForTimeInterval:2.0];
+    //[NSThread sleepForTimeInterval:2.0];
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     EVDMenuViewController *menu = [[EVDMenuViewController alloc] init];

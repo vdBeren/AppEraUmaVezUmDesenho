@@ -59,6 +59,8 @@
     [_btnDir setAlpha:0.2];
     [_btnEsq setAlpha:0.2];
     
+    [_pageViewController setCurrentBookKey:[_currentBook bookKey]];
+    
     [self changePage];
     
 }

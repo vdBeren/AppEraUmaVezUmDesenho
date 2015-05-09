@@ -42,6 +42,9 @@
     imageRecord = [UIImage imageNamed:@"Gravar.png"];
     imageStop = [UIImage imageNamed:@"Stop.png"];
     
+    [_drawViewBottom setAlpha:0.2];
+    [_drawViewTop setAlpha:0.7];
+    
     [self createButtonsLeque];
 }
 
@@ -416,6 +419,16 @@
 }
 
 - (void) stopPlayer{
+    [self playBackgroundMusic];
+    [_audioRecorder stop];
+    
+    [_btnRecordPause setBackgroundImage:imageRecord forState:UIControlStateNormal];
+    [_imageLabelRecord setImage:[UIImage imageNamed:@"LegendaGravar.png"]];
+    [_btnStop setEnabled:NO];
+    
+    fetchAudio = NO;
+    fetchRecord = NO;
+    
     [_audioPlayer stop];
     if ([_currentUser currentUser] == 0) {
         [_btnPlay setBackgroundImage:imageNarrate forState:UIControlStateNormal];
